@@ -1,6 +1,6 @@
-# Modern mosquitto C sample
+# Modern mosquitto C++ sample
 
-How to write a C MQTT client using Mosquitto The 2018 version.
+How to write a C++ MQTT client using Mosquitto The 2022 version.
 
 Read the full article [on my blog](https://thanhphu.net/2018/11/28/how-to-write-a-c-mqtt-client-using-mosquitto/)
 
@@ -13,7 +13,7 @@ brew install c-ares
 ```
 
 #Running
-Compile and run the code with
+Compile and run the code with Make
 ```
-gcc -Wall -o mypub mypub.c -lmosquitto -lssl -lcrypto -pthread -lcares && ./mypub
+make publish
 ```
