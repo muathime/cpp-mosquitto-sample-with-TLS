@@ -8,12 +8,12 @@
 #include <iostream>
 using namespace std;
 
-#define MQTT_HOSTNAME "a1ek3lbmx2jfb9-ats.iot.eu-west-1.amazonaws.com"
+#define MQTT_HOSTNAME "<host>"
 #define MQTT_PORT 8883
-#define MQTT_CLIENTID "1918171615"
-#define MQTT_TOPIC "$aws/things/1918171615/shadow/update"
+#define MQTT_CLIENTID "<ThingName>"
+#define MQTT_TOPIC "$aws/things/<ThingName>/shadow/update"
 
-string payload = "{\"state\":{\"reported\":{\"Timestamp\":\"2022-04-07T18:10:46.000Z\",\"ignition\":100,\"movement\":100,\"latlng\":\"-1.2322516,36.9206783\",\"Latitude\":-1.2322516,\"Longitude\":36.9206783,\"Altitude\":1595,\"Speed\":100},\"desired\":null}}";
+string payload = "{\"state\":{\"reported\":{\"Timestamp\":\"2022-04-07T18:10:46.000Z\",\"ignition\":100,\"movement\":100,\"latlng\":\"-1.0,36.0\",\"Latitude\":-1.0,\"Longitude\":36.0,\"Altitude\":1595,\"Speed\":100},\"desired\":null}}";
 const char *text = payload.c_str();
 
 static bool connected = true;
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 
     // mosquitto_username_pw_set(mosq, MQTT_USERNAME, MQTT_PASSWORD);
 
-    mosquitto_tls_set(mosq, "/home/antony/Downloads/1918171615/ca.pem", NULL, "/home/antony/Downloads/1918171615/cert.pem", "/home/antony/Downloads/1918171615/privkey.pem", NULL);
+    mosquitto_tls_set(mosq, "<path_to_CA_cert_file>", NULL, "<path_to_client_cert_file>", "<path_to_privateKey_file>", NULL);
 
     int ret = mosquitto_connect(mosq, MQTT_HOSTNAME, MQTT_PORT, 60);
     if (ret)
