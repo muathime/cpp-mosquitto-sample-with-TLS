@@ -2,14 +2,15 @@
 
 How to write a C++ MQTT client using Mosquitto The 2022 version.
 
-Read the full article [on my blog](https://thanhphu.net/2018/11/28/how-to-write-a-c-mqtt-client-using-mosquitto/)
+Read the original article in C [on thanhphu's blog](https://thanhphu.net/2018/11/28/how-to-write-a-c-mqtt-client-using-mosquitto/)
 
 #Requirements
-(MacOS / Brew) - Linux is similar, replace `brew install` with `sudo apt-get install`
+(Linux / apt ) - MacOs is similar, replace `sudo apt-get install` with `brew install`
 ```
-brew install mosquitto
-brew install libssl-dev
-brew install c-ares
+sudo apt-get install mosquitto
+sudo apt-get install libssl-dev
+sudo apt-get install libmosquitto-dev
+sudo apt-get install c-ares
 ```
 
 #Running
